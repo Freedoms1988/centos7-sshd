@@ -18,8 +18,8 @@ RUN yum install -y openssh-clients
 
 #修改ssh配置
 RUN sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
-RUN sed '/^#Host_Key/'d /etc/ssh/sshd_config
-RUN sed '/^Host_Key/'d /etc/ssh/sshd_config
+RUN sed -i '/^#Host_Key/'d /etc/ssh/sshd_config
+RUN sed -i '/^Host_Key/'d /etc/ssh/sshd_config
 RUN echo 'HostKey /etc/ssh/ssh_host_rsa_key'>/etc/ssh/sshd_config
 
 #生成ssh-key与配置ssh-key
