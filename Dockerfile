@@ -8,7 +8,7 @@ MAINTAINER freedoms1988 zzt328697768@gmail.com
 USER root
 
 #更新yum
-RUN yum update
+RUN yum update -y
 
 #安装vim wget openssh-server openssh-clients
 RUN yum install -y vim
